@@ -1,0 +1,37 @@
+<div class="col-md-12">
+	<h1><?php echo $client->name; ?></h1>
+	<hr>
+	
+	<table class="table table-striped">
+	<tbody>
+		<tr>
+			<td class="col-md-6"><?php echo $client->country; ?> <?php echo $client->state; ?></td>
+			<td class="col-md-6"><?php echo $client->contact; ?></td>
+		</tr>
+		
+		<tr>
+			<td class="col-md-6"><?php echo $client->city; ?></td>
+			<td class="col-md-6"><?php echo $client->phone; ?></td>
+		</tr>
+
+		<tr>
+			<td class="col-md-6"><?php echo $client->zip; ?></td>
+			<td class="col-md-6"><?php echo $client->email; ?></td>
+		</tr>
+
+		<tr>
+			<td class="col-md-6"><?php echo $client->address; ?></td>
+			<td class="col-md-6"><?php echo $client->website; ?></td>
+		</tr>
+		
+		<?php if($client->description): ?>
+			
+			<tr>
+				<td colspan="2"><?php echo $client->description; ?></td>
+			</tr>
+		
+		<?php endif; ?>
+		
+	</tbody>
+	</table>
+</div>

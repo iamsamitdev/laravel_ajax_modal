@@ -1,0 +1,45 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-md-12">
+		<h1><i class="fa fa-list"></i> Clients</h1>
+		
+		<!--
+		/** 
+		  * === BUTTON FOR MODAL CREATE ===
+		  * add solsoShowModal in button class
+		  * place data-href, data-modal-title in button code
+		  * data-href 			= path to your controller for create action
+		  * data-modal-title	= text for modal title
+		*/
+		-->		
+		<button type="button" class="btn btn-primary solsoShowModal" data-toggle="modal" data-target="#solsoCrudModal" data-href="<?php echo URL::to('client/create'); ?>" data-modal-title="Create Client">
+			<i class="fa fa-user-plus"></i> Create new client
+		</button>
+	</div>	
+
+	<div class="col-md-12 top40">
+		<h3>Clients</h3>
+		
+		<!--
+		/** 
+		  * === INSERT TABLE WITH ALL ITEMS ===
+		  * create a div with id ajaxTable, this action is necessary to load table with AJAX
+		  * include your table.blade.php
+		*/
+		-->
+		<div id="ajaxTable" class="table-responsive">
+			<?php echo $__env->make('clients.table', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+		</div>	
+	</div>
+	
+	<!--
+	/** 
+	  * === INCLUDE MODALS ===
+	  * include modal-crud 		(path to file)
+	  * include modal-delete 	(path to file)
+	*/
+	-->	
+	<?php echo $__env->make('_assets.modals.modal-crud', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('_assets.modals.modal-delete', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	
+<?php $__env->stopSection(); ?>
